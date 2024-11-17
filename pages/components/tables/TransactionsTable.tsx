@@ -9,7 +9,7 @@ import {
   Paper,
   Typography,
 } from "@mui/material";
-import { Transaction } from "../../../types/types";
+import { Transaction } from "../types/types";
 
 type TransactionsTableProps = {
   transactions: Transaction[];
@@ -53,16 +53,16 @@ const TransactionsTable: React.FC<TransactionsTableProps> = ({
           </TableRow>
         </TableHead>
         <TableBody>
-          {transactions?.length > 0 ? (
+          {transactions.length > 0 ? (
             transactions.map((transaction) => (
-              <TableRow key={transaction?.id}>
-                <TableCell>{transaction?.id}</TableCell>
-                <TableCell>{transaction?.name}</TableCell>
+              <TableRow key={transaction.id}>
+                <TableCell>{transaction.id}</TableCell>
+                <TableCell>{transaction.name}</TableCell>
                 <TableCell align="right">
-                  {formatCurrency(transaction?.amount)}
+                  {formatCurrency(transaction.amount)}
                 </TableCell>
                 <TableCell align="right">
-                  {transaction?.date}
+                  {transaction.date}
                 </TableCell>
               </TableRow>
             ))
